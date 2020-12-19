@@ -1,4 +1,5 @@
-from .logger import get_logger
+from logger import get_logger
+from settings import DOCKER_LIST
 import asyncio
 
 log = get_logger(__name__)
@@ -6,5 +7,7 @@ log = get_logger(__name__)
 
 async def pooling_rss():
     while 1:
-        log.info('Pooling RSS: by 5 sec')
-        asyncio.sleep(5)
+        await asyncio.sleep(20)
+        log.info('Pooling RSS: by 20 sec')
+        for url in DOCKER_LIST:
+            log.info('get:'+url)
