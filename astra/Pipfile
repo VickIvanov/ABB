@@ -1,0 +1,17 @@
+[[source]]
+name = "pypi"
+url = "https://pypi.org/simple"
+verify_ssl = true
+
+[dev-packages]
+
+[packages]
+fastapi = {extras = ["all"], version = "==0.62.0"}
+aiohttp = "*"
+tortoise-orm = {extras = ["asyncpg"], version = "==0.16.18"}
+colorlog = "*"
+aiomysql = "*"
+joblib = "*"
+
+[requires]
+python_version = "3.8"

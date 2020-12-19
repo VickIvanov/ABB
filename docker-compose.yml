@@ -1,9 +1,49 @@
 version: '2'
 services:
-    gosparser:
-        build: ./gosparser
-        image: gosparser:latest
-        ports:
-            - "8000:8000"
+    db:
+        image: postgres:13.1
+        restart: always
+        environment: 
+            POSTGRES_DB: postgres
+            POSTGRES_USER: admin
+            POSTGRES_PASSWORD: secret
+            PGDATA: /var/lib/postgresql/data
         volumes:
-            - "./gosparser:/gosparser"
+            - dbdata:/var/lib/postgresql/data
+        ports:
+            - "5432:5432"
+    pgAdmin:
+        restart: always
+        image: dpage/pgadmin4:latest
+        ports:
+            - "5000:80"
+        environment:
+            PGADMIN_DEFAULT_EMAIL: admin@admin.ru
+            PGADMIN_DEFAULT_PASSWORD: 123
+        volumes:
+            - pgadmin:/var/lib/pgadmin     
+
+    astra:
+        build: ./astra
+        image: astra:latest
+        ports:
+            - "82:80"
+        environment:
+            DB_URL: postgres://admin:secret@db/postgres
+        
+        volumes:
+            - "./astra:/astra"
+        depends_on: 
+            - db
+
+
+volumes:
+    dbdata:
+    pgadmin:                 
+    #gosparser:
+    #    build: ./gosparser
+    #    image: gosparser:latest
+    #    ports:
+    #        - "8000:8000"
+    #    volumes:
+    #        - "./gosparser:/gosparser"
