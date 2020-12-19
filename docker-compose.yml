@@ -1,0 +1,9 @@
+version: '2'
+services:
+    gosparser:
+        build: ./gosparser
+        image: gosparser:latest
+        ports:
+            - "8000:8000"
+        volumes:
+            - "./gosparser:/gosparser"
