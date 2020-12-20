@@ -69,10 +69,10 @@ def parse_ea44_result(content):
     d = {}
 
     tables = content.find_all('table')
+    result = []
     if len(tables) > 1:
         tbl = tables[1]
         th = tbl.find_all('th')
-        result = []
         for r in tbl.find_all('tr'):
             res = {}
             for i, t in enumerate(r.find_all('td')):
@@ -107,5 +107,11 @@ def get_ea44(regNum='0815300003220000693'):
         else:
             return result
 
+    return {'error': 'get data error'}
+
+
+import ftplib
+
+def get_ftp():
     return {'error': 'get data error'}
 

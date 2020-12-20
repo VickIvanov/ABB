@@ -1,7 +1,7 @@
 
 from fastapi import FastAPI
 from .aiorequest import fetch
-from .parser import get_ea44
+from .parser import get_ea44, get_ftp
 from .feed import get_feed
 from .orgparser import org_parser
 from aiohttp import ClientSession, ClientResponseError
@@ -20,6 +20,11 @@ async def root():
 @app.get("/parse")
 async def parse(regnum : str):
     return get_ea44(regnum)
+
+
+@app.get("/ftp")
+async def ftp_parse(regnum : str):
+    return get_ftp()
 
 
 @app.get("/feed")
