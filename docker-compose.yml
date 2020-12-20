@@ -26,6 +26,7 @@ services:
     astra:
         build: ./astra
         image: astra:latest
+        restart: always
         ports:
             - "82:80"
         environment:
@@ -37,11 +38,21 @@ services:
             - db
     gosparser:
         build: ./gosparser
+        restart: always
         image: gosparser:latest
         ports:
             - "8000:8000"
         volumes:
             - "./gosparser:/gosparser"
+
+    ftpparser:
+        build: ./gosparser
+        restart: always
+        image: gosparser:latest
+        ports:
+            - "8002:8000"
+        volumes:
+            - "./gosparser:/gosparser"            
 
 volumes:
     dbdata:

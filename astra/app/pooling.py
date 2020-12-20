@@ -14,8 +14,7 @@ log = get_logger(__name__)
 
 async def pooling_rss():
     while 1:
-        await asyncio.sleep(20)
-        log.info('Pooling RSS: by 20 sec')
+        log.info('Pooling RSS: by 1 hour')
         async with ClientSession() as session:
             for url in DOCKER_LIST:
                 log.info('get:'+url)
@@ -26,6 +25,7 @@ async def pooling_rss():
 
                 except Exception as e:
                     log.error(e)
+        await asyncio.sleep(60*60)
 
 async def rss_proceed(feed, url, session):
     for f in feed:
@@ -38,8 +38,8 @@ async def rss_proceed(feed, url, session):
 
             url_feed = f'{url}parse?regnum={regNum}'
             data = await fetch(url_feed, None, session)
-            if data.status_code == 200:
-                data = data.json()
+            if len(data) > 2:
+                #data = data.json()
                 if 'error' not in data:
                     insert_supply(data)
                     url_org = quote(data['common']['org_url'])

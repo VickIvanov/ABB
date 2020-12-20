@@ -113,5 +113,21 @@ def get_ea44(regNum='0815300003220000693'):
 import ftplib
 
 def get_ftp():
+    ftp = ftplib.FTP()
+    host = "ftp.zakupki.gov.ru"
+    port = 21
+    ftp.connect(host, port)
+    print(ftp.getwelcome())
+    try:
+        print("Logging in...")
+        ftp.login("free", "free")
+    except:
+        return {'error': '"failed to login"'}
+
+    for f in ftp.retrlines('LIST'):
+        fname = f.name
+        with open(fname, 'wb') as fp:
+            ftp.retrbinary(fname, fp.write)
+
     return {'error': 'get data error'}
 
