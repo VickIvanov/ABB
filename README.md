@@ -18,7 +18,7 @@
 
 Стек проекта: PostgreSQL, Python (Sklearn, Tensorflow, Flask), VueJS, Docker.
 
-Также у нас есть обученная ***ML-модель, предсказывающая участие юридического лица в наиболее релевантных для него торгах***], которая анализирует участие в предыдущих торгах и предсказывает наиболее подходящие.
+Также у нас есть обученная ***ML-модель, предсказывающая участие юридического лица в наиболее релевантных для него торгах***], которая анализирует участие в предыдущих торгах и предсказывает наиболее подходящие. Описание алгоритма работы рекомендательной модели [находится по этой ссылке](https://docs.google.com/document/d/1EaA5vj8KUOc6gXxsCl0qPOLsMgXBU8YUP30PlMt7Yvc/edit?usp=sharing)
 
 Спасибо организаторам за интересную задачу, мы будем рады продолжить сотрудничество!
 
@@ -62,3 +62,4 @@ docker-compose down
 - [Структура базы данных](https://drive.google.com/file/d/1nlDj2VaAdCQKE6Uxhq3f78gMg_4m_2ak/view?usp=sharing)
 - [Предварительная смета](https://docs.google.com/spreadsheets/d/18e8cbCPE32qtVBJIUeRcRZII0Z91vVfwcjR8ZY6sMCs/edit#gid=0) общих затрат по разработке полноценной версии проекта.
 - [Презентация нашего решения](https://drive.google.com/file/d/1CrrpWaHVKLvel5oZUJ-7JPwvzE9GS_ux/view?usp=sharing)
+- [Описание алгоритма работы рекомендательной модели](https://docs.google.com/document/d/1EaA5vj8KUOc6gXxsCl0qPOLsMgXBU8YUP30PlMt7Yvc/edit?usp=sharing)
