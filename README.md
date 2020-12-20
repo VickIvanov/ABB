@@ -61,4 +61,4 @@ docker-compose down
 - [Папка со всеми дополнительными материалами](https://drive.google.com/drive/folders/1EsFqr-gOKRY3SIBAROof5HdMGVMMHn3g?usp=sharing)
 - [Структура базы данных](https://drive.google.com/file/d/1nlDj2VaAdCQKE6Uxhq3f78gMg_4m_2ak/view?usp=sharing)
 - [Предварительная смета](https://docs.google.com/spreadsheets/d/18e8cbCPE32qtVBJIUeRcRZII0Z91vVfwcjR8ZY6sMCs/edit#gid=0) общих затрат по разработке полноценной версии проекта.
-- [Презентация нашего решения](https://drive.google.com/file/d/1CrrpWaHVKLvel5oZUJ-7JPwvzE9GS_ux/view?usp=sharing
+- [Презентация нашего решения](https://drive.google.com/file/d/1CrrpWaHVKLvel5oZUJ-7JPwvzE9GS_ux/view?usp=sharing)
