@@ -16,7 +16,7 @@
 
 Данный проект успешно решает все эти задачи.
 
-Стек проекта: PostgreSQL, Python (Sklearn, Tensorflow, Flask), VueJS, Docker.
+Стек проекта: PostgreSQL, Python (Sklearn, Tensorflow, Flask), PHP, Laravel, VueJS, Docker.
 
 Также у нас есть обученная ***ML-модель, предсказывающая участие юридического лица в наиболее релевантных для него торгах***], которая анализирует участие в предыдущих торгах и предсказывает наиболее подходящие. Описание алгоритма работы рекомендательной модели [находится по этой ссылке](https://docs.google.com/document/d/1EaA5vj8KUOc6gXxsCl0qPOLsMgXBU8YUP30PlMt7Yvc/edit?usp=sharing)
 
