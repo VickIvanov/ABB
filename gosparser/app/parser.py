@@ -108,3 +108,4 @@ def get_ea44(regNum='0815300003220000693'):
             return result
 
     return {'error': 'get data error'}
+
