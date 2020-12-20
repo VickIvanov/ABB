@@ -1,7 +1,6 @@
-
-
+import asyncio
 import os, sys
-sys.path.append('D:/projects/hack/genesis/astra/app')
+
 
 
 from tortoise.contrib.fastapi import HTTPNotFoundError, register_tortoise
@@ -15,6 +14,7 @@ import json
 from logger import get_logger
 from models import SupplyModel, Supply, OrganizationModel
 from database import init
+from pooling import pooling_rss
 from settings import  DB_URL, DB_UPDATE_SCHEMA
 
 app = FastAPI()
@@ -22,6 +22,7 @@ app = FastAPI()
 
 @app.on_event("startup")
 async def startup():
+    asyncio.gather( pooling_rss() )
     #print(await SupplyModel.get(id=1))
     pass
     #await database.connect()
